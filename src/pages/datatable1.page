@@ -1,0 +1,36 @@
+<apex:page standardController="Account" recordSetVar="accounts" 
+   tabstyle="account" sidebar="false">
+   <apex:form > 
+   <apex:dataTable value="{!accounts}" var="account" id="theTable" rowClasses="odd,even"
+
+                        styleClass="tableClass" align="center" cellpadding="20px" bgcolor="#f2f2f2" border="thin" width="1000px">
+
+		<apex:facet name="caption">Accounts Details</apex:facet>
+		<apex:column >
+	
+		        <apex:facet name="header">Name</apex:facet>
+				<apex:outputText value="{!account.name}"/>
+
+		</apex:column>
+        <apex:column >
+
+		        <apex:facet name="header">AccountNumber</apex:facet>
+				<apex:outputText value="{!account.AccountNumber}"/>
+
+		</apex:column>
+
+		<apex:column >
+
+			<apex:facet name="header">Owner</apex:facet>
+			<apex:outputText value="{!account.owner.name}"/>
+
+		</apex:column>
+		<apex:column >
+
+			<apex:facet name="header">Phone Number</apex:facet>
+			<apex:outputText value="{!account.Phone}"/>
+
+		</apex:column>
+	</apex:dataTable>
+   </apex:form>
+</apex:page>
